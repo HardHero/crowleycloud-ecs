@@ -1,0 +1,153 @@
+/* Tags */
+
+#Activities {
+    list-style: none;
+}
+
+body {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: none;
+    background: #f0f0f0;
+}
+
+a {
+    text-decoration: none;
+    color: dodgerblue;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Classes */
+.container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    font-size: 19px;
+}
+
+.resume {
+    font-size: 19px;
+    position: relative;
+    max-width: 736px;
+    margin: 0 auto 1em auto;
+    background: #ffffff;
+    padding: 2em;
+    box-shadow: 0 0 6px #ccc;
+}
+.resume h1 {
+    font-family: Georgia, 'Myriad Pro', 'Trebuchet MS', Helvetica, Arial;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    margin-bottom: .5em;
+}
+.resume h2 {
+    font-family: sans-serif;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 19px;
+    margin: 0;
+    display: block;
+}
+
+.resume h3 {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    margin: 0;
+    display: inline-block;
+}
+
+.resume h4 {
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 19px;
+    margin: 0;
+    display: block;
+}
+
+.resume .section {
+    margin: .5em 0;
+}
+
+.resume .section:first-child {
+    margin-top: 0;
+}
+
+.resume .subsection {
+    margin-bottom: .5em;
+}
+
+.resume .subsection:last-child {
+    margin-bottom: 0;
+}
+
+.resume .date {
+    float: right;
+}
+
+.resume .content {
+    text-align: justify;
+}
+
+h4.u-inline {
+    display: inline-block;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+    max-width: 90%;
+}
+
+li {
+    margin: 0.25em 0;
+}
+
+li > ul {
+    list-style-type: disc;
+    margin-left: 1.5em;
+}
+
+@media only screen and (max-width: 800px) {
+    .resume {
+        margin: 0.5em;
+    }
+
+    .resume .date {
+        display: block;
+        float: none;
+    }
+
+    .resume .section {
+        float: none;
+        margin: .25em 0;
+    }
+    .resume h3 {
+        display: block;
+    }
+    .resume h4 {
+        display: block;
+    }
+
+    .resume .content {
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    a:hover{
+        text-decoration: none;
+        background: transparent;
+    }
+    .container {
+        height: auto;
+    }
+}

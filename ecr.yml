@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: ecr for crowley cloud
+Resources:
+  crowleycloudecr:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: crowley-cloud-ecr
+Outputs:
+  ecr:
+    Value: !GetAtt crowleycloudecr.Arn
