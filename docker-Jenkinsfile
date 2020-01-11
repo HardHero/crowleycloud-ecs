@@ -14,11 +14,7 @@ pipeline {
         stage('Push Docker'){
             steps{
                 script{
-                    withAWS(region:'us-east-1', profile:'default') {
-                        def ecrCreds = ecrLogin()
-                        print ecrCreds
-                    }
-                    withDockerRegistry("${env.ECR_REG}"){
+                    withDockerRegistry("${env.ECR_REG}", 'crowley-cloud-root'){
                         docker.image("crowley-cloud-ecr").push('latest')
                     }
                 }
