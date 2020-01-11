@@ -8,16 +8,14 @@ pipeline {
         stage('Build Docker'){
             steps{
                 script{
-                    docker.build("crowley-cloud-ecr")
+                    image = docker.build("166828361573.dkr.ecr.us-east-1.amazonaws.com/crowley-cloud-ecr")
                 }
             }
         }
         stage('Push Docker'){
             steps{
                 script{
-                    withDockerRegistry([url: ECR_REG]){
-                        docker.image("crowley-cloud-ecr").push('latest')
-                    }
+                    image.push('latest')
                 }
             }
         }
