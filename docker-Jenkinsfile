@@ -2,18 +2,22 @@ pipeline {
     agent any
     parameters{
         string(name:'ECR_REG', defaultValue: '', description: 'An AWS Elastic IP')
-        string(name:'DOMAIN', defaultValue: 'crowley.cloud')
-        string(name:'STACK_NAME', defaultValue: 'crowley-cloud')
     }
     stages {
         stage('Build Docker'){
             steps{
-                docker.build("crowley-cloud-ecr")
+                script{
+                    docker.build("crowley-cloud-ecr")
+                }
             }
         }
         stage('Push Docker'){
-            withDockerRegistry("${env.ECR_REG}"){
-                docker.image("crowley-cloud-ecr").push('latest')
+            steps{
+                script{
+                    withDockerRegistry("${env.ECR_REG}"){
+                        docker.image("crowley-cloud-ecr").push('latest')
+                    }
+                }
             }
         }
     }
