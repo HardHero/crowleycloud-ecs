@@ -19,5 +19,15 @@ pipeline {
                 }
             }
         }
+        stage('Update ECS Cloudformation Stack'){
+            steps{
+                withAWS(region:'us-east-1', profile:'default') {
+                    cfnUpdate(
+                        stack:"crowley-cloud-ecr", 
+                        file:'ecr.yml', 
+                    )
+                }
+            }
+        }
     }
 }
