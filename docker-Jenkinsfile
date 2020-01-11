@@ -15,7 +15,7 @@ pipeline {
         stage('Push Docker'){
             steps{
                 script{
-                    withDockerRegistry(url: ECR_REG, credentialsId: ECR_CRED){
+                    withDockerRegistry([url: ECR_REG, credentialsId: ECR_CRED]){
                         docker.image("crowley-cloud-ecr").push('latest')
                     }
                 }
