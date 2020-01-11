@@ -15,7 +15,6 @@ pipeline {
         stage('Push Docker'){
             steps{
                 script{
-                    sh("eval $(aws ecr get-login --no-include-email | sed 's|https://||')")
                     withDockerRegistry([url: ECR_REG]){
                         docker.image("crowley-cloud-ecr").push('latest')
                     }
