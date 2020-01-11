@@ -23,7 +23,7 @@ pipeline {
             steps{
                 withAWS(region:'us-east-1', profile:'default') {
                     cfnUpdate(
-                        stack:"crowley-cloud-ecr", 
+                        stack:"crowley-cloud-ecs", 
                         file:'ecs.yml', 
                     )
                 }
