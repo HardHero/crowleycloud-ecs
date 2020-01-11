@@ -15,6 +15,9 @@ pipeline {
         stage('Push Docker'){
             steps{
                 script{
+                    withAWS(region:'us-east-1', profile:'default') {
+                        ecrLogin()
+                    }
                     image.push('latest')
                 }
             }
