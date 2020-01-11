@@ -1,21 +1,20 @@
 pipeline {
     agent any
     parameters{
-        string(name:'ECR_REG', defaultValue: '', description: 'ECR Registry')
-        string(name:'ECR_CRED', defaultValue: '', description: 'ECR Cred')
+        string(name:'IMAGE_NAME', defaultValue: '', description: 'ECR Registry')
     }
     stages {
         stage('Build Docker'){
             steps{
                 script{
-                    image = docker.build("166828361573.dkr.ecr.us-east-1.amazonaws.com/crowley-cloud-ecr")
+                    image = docker.build("${IMAGE_NAME}")
                 }
             }
         }
         stage('Push Docker'){
             steps{
                 script{
-                    eval `aws ecr get-login --no-include-email`
+                    sh "eval `aws ecr get-login --no-include-email`"
                     image.push('latest')
                 }
             }
