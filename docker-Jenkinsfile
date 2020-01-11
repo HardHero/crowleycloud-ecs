@@ -15,9 +15,7 @@ pipeline {
         stage('Push Docker'){
             steps{
                 script{
-                    withAWS(region:'us-east-1', profile:'default') {
-                        ecrLogin()
-                    }
+                    eval `aws ecr get-login --no-include-email`
                     image.push('latest')
                 }
             }
