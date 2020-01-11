@@ -24,7 +24,7 @@ pipeline {
                 withAWS(region:'us-east-1', profile:'default') {
                     cfnUpdate(
                         stack:"crowley-cloud-ecr", 
-                        file:'ecr.yml', 
+                        file:'ecs.yml', 
                     )
                 }
             }
