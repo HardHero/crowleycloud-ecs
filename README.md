@@ -4,6 +4,14 @@ This repo uses AWS Cloudformation to deploy a website in ECS. It is based on the
 
 https://milapneupane.com.np/2019/07/28/how-to-deploy-a-docker-container-with-aws-ecs-using-cloudformation/
 
+## Pre-reqs
+
+Install ecs-deploy
+
+        pip install ecs-deploy
+
+To run any of the `Jenkinsfile*` you need a jenkins instance with the appropriate jenkins pipeline jobs.
+        
 ## How I ran it
 
 1. To Start:

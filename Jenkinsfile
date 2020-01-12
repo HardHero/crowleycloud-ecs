@@ -29,5 +29,10 @@ pipeline {
                 }
             }
         }
+        stage('Update ECS Cloudformation Stack'){
+            steps{
+                sh 'ecs deploy CrowleyCloudECSCluster crowley-cloud-service'
+            }
+        }
     }
 }
