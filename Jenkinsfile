@@ -29,7 +29,7 @@ pipeline {
                 }
             }
         }
-        stage('Update ECS Cloudformation Stack'){
+        stage('Update ECS cluster with new image'){
             steps{
                 sh 'ecs deploy CrowleyCloudECSCluster crowley-cloud-service'
             }
