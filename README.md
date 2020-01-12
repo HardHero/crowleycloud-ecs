@@ -12,7 +12,7 @@ Install ecs-deploy
 
 To run any of the `Jenkinsfile*` you need a jenkins instance with the appropriate jenkins pipeline jobs.
         
-## How I ran it
+## How to set the stacks up
 
 1. To Start:
         
@@ -30,3 +30,6 @@ To run any of the `Jenkinsfile*` you need a jenkins instance with the appropriat
 
         aws cloudformation update-stack --stack-name crowley-cloud-ecs --template-body file://ecs.yml
 
+## Using it in Jenkins
+
+There are Jenkinsfile for ECR/ELB and the ECS stacks respectively.
